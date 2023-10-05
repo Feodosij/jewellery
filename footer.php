@@ -12,21 +12,23 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jewellery-shop' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'jewellery-shop' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'jewellery-shop' ), 'jewellery-shop', '<a href="https://www.linkedin.com/in/feodosii-shapovalov-frontend/">Feodosii</a>' );
-				?>
-		</div><!-- .site-info -->
+		<div class="footer-widget-area">
+			<div class="footer-widget">
+				<?php dynamic_sidebar('Footer-sidebar-info'); ?>
+			</div>
+			<div class="footer-widget">
+				<?php dynamic_sidebar('Footer-sidebar-posts'); ?>
+			</div>
+			<div class="footer-widget">
+				<?php dynamic_sidebar('Footer-sidebar-ourstores'); ?>
+			</div>
+			<div class="footer-widget">
+				<?php dynamic_sidebar('Footer-sidebar-links'); ?>
+			</div>
+		</div>
+
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+
 
 <?php wp_footer(); ?>
 

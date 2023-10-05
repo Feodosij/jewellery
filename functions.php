@@ -49,7 +49,8 @@ function jewellery_shop_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'jewellery-shop' ),
+			'menu-header' => esc_html__( 'Header menu', 'jewellery-shop' ),
+			'menu-footer' => esc_html__( 'Footer menu', 'jewellery-shop' ),
 		)
 	);
 
@@ -131,6 +132,37 @@ function jewellery_shop_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer-sidebar-info', 'jewellery-shop' ),
+			'id'            => 'sidebar-info',
+			'description'   => esc_html__( 'Add widgets here.', 'jewellery-shop' ),
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer-sidebar-posts', 'jewellery-shop' ),
+			'id'            => 'sidebar-posts',
+			'description'   => esc_html__( 'Add widgets here.', 'jewellery-shop' ),
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer-sidebar-ourstores', 'jewellery-shop' ),
+			'id'            => 'sidebar-ourstores',
+			'description'   => esc_html__( 'Add widgets here.', 'jewellery-shop' ),
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer-sidebar-links', 'jewellery-shop' ),
+			'id'            => 'sidebar-links',
+			'description'   => esc_html__( 'Add widgets here.', 'jewellery-shop' ),
+		)
+	);
 }
 add_action( 'widgets_init', 'jewellery_shop_widgets_init' );
 
@@ -140,6 +172,7 @@ add_action( 'widgets_init', 'jewellery_shop_widgets_init' );
 function jewellery_shop_scripts() {
 	wp_enqueue_style( 'jewellery-shop-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'jewellery-shop-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/styles/css/main.css', array(), );
 
 	wp_enqueue_script( 'jewellery-shop-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 

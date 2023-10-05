@@ -1,0 +1,225 @@
+
+/* Lora Bold */
+@font-face {
+    font-family: 'Lora-Bold';
+    src: url('../fonts/Lora-Bold.woff2') format('woff2'),
+         url('../fonts/Lora-Bold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Lora italic*/
+@font-face {
+    font-family: 'Lora-Italic';
+    src: url('../fonts/Lora-Italic.woff2') format('woff2'),
+         url('../fonts/Lora-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Lora Regular */
+@font-face {
+    font-family: 'Lora-Regular';
+    src: url('../fonts/Lora-Regular.woff2') format('woff2'),
+         url('../fonts/Lora-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Marcellus Regular */
+@font-face {
+    font-family: 'Marcellus-Regular';
+    src: url('../fonts/Marcellus-Regular.woff2') format('woff2'),
+         url('../fonts/Marcellus-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+//---Header
+
+header {
+    background-color: #040404;
+
+    .menu-header-menu-container {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 6px;
+
+        .menu_list {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+
+            .menu-item {
+                font-family: 'Marcellus-Regular', sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                text-transform: uppercase;
+                
+        
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+}
+
+
+//---main banner
+
+.main_banner {
+    background-color: #040404;
+   
+    .content_wrapper {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        padding: 160px 0 240px 0;
+        min-height: 640px;
+        color: #fff;
+
+        .banner_sub_title {
+            font-family: 'Lora-Italic', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 25px;
+            margin-bottom: 10px;
+        }
+
+        .banner_title {
+            font-family: 'Marcellus-Regular', sans-serif;
+            font-size: 54px;
+            font-weight: 400;
+            line-height: 60px;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .banner_text {
+            font-family: 'Lora-Regular', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 25px;
+            margin-bottom: 35px;
+            max-width: 470px;
+        }
+        
+        .banner_buttons {
+            display: flex;
+            a {
+                border: 1px solid #fff;
+                padding: 10px 15px;
+                text-decoration: none;
+                font-family: 'Lora-Regular', sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 25px;
+                text-transform: uppercase;
+                color: #fff;
+                transition: background-color 0.5s ease, color 0.3s ease;
+                
+
+                &:nth-child(1) {
+                    margin-right: 15px;
+                    color: #000;
+                    background-color: #fff;
+
+                    &:hover {
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+
+                &:nth-child(2) {
+
+                    &:hover {
+                        color: #000;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+//---Footer
+
+footer {
+    background: #EAEAEA;
+
+    .footer-widget-area {
+        padding: 60px;
+        max-width: 1170px;
+        width: 100%;
+        display: flex;
+        margin: 0 auto;
+
+        .footer-widget {
+            list-style-type: none;
+            max-width: 314px;
+            margin-right: 12px;
+            flex-grow: 1;
+
+            .widget {
+                color: #777777;
+
+                .widgettitle {
+                    font-family: 'Marcellus-Regular', sans-serif;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #000;
+                }
+
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+                    li {
+                        margin-bottom: 10px;
+
+                        a {
+                            text-decoration: none;
+                            color: #777777;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .widget_text {
+                .textwidget {
+                    font-family: 'Lora-Regular', sans-serif;
+                    font-size: 14px;
+                    line-height: 20px;
+                    max-width: 269px;
+                }
+            }
+        }
+    }
+}
