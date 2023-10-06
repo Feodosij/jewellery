@@ -24,6 +24,72 @@ get_header();
     </div>
 </section>
 
+<!-- Futured product carousel -->
+<section class="futured_product">
+   <div class="container">
+        <div class="carousel">
+            <?php
+            $args = array(
+                'post_type' => 'product',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_visibility',
+                        'field'    => 'name',
+                        'terms'    => 'featured',
+                    ),
+                ),
+            );
+            $featured = new WP_Query( $args );
+
+            if ($featured->have_posts()) :
+            ?>
+            <div class="carousel-container">
+                <?php while ($featured->have_posts()) : $featured->the_post(); ?>
+                <div class="carousel-item">
+                    <a><?php the_post_thumbnail(); ?></a>
+                    <?php the_title(); ?>
+                    <span><?php echo '$' . $product->get_price(); ?></span>
+                </div>
+                <?php endwhile; ?>
+            </div>
+            <?php endif; ?>
+            <?php wp_reset_query();  ?>
+        </div>
+
+        <div class="carousel">
+            <?php
+            $args = array(
+                'post_type' => 'product',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_visibility',
+                        'field'    => 'name',
+                        'terms'    => 'featured',
+                        'operator' => 'NOT IN',
+                    ),
+                ),
+            );
+            $featured = new WP_Query( $args );
+
+            if ($featured->have_posts()) :
+            ?>
+            <div class="carousel-container">
+                <?php while ($featured->have_posts()) : $featured->the_post(); ?>
+                <div class="carousel-item">
+                    <a><?php the_post_thumbnail(); ?></a>
+                    <?php the_title(); ?>
+                    <span><?php echo '$' . $product->get_price(); ?></span>
+                </div>
+                <?php endwhile; ?>
+            </div>
+            <?php endif; ?>
+            <?php wp_reset_query();  ?>
+        </div>
+   </div>
+</section>
+
+
+
 
 <?php
 get_footer();

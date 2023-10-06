@@ -172,9 +172,13 @@ add_action( 'widgets_init', 'jewellery_shop_widgets_init' );
 function jewellery_shop_scripts() {
 	wp_enqueue_style( 'jewellery-shop-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'jewellery-shop-style', 'rtl', 'replace' );
+	wp_enqueue_script('jquery');
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/styles/css/main.css', array(), );
+    wp_enqueue_style('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
 
 	wp_enqueue_script( 'jewellery-shop-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'custom-carousel', get_template_directory_uri() . '/js/carousel.js', array('jquery'), _S_VERSION, true );
+    wp_enqueue_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), null, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -208,4 +212,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
