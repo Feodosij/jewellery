@@ -45,10 +45,5 @@
 				)
 			);
 		?>
-
-		<div class="woocommerce-login-register">
-			<a href="<?php echo esc_url( wc_get_account_endpoint_url( 'login' ) ); ?>" class="woocommerce-login-link"><?php esc_html_e( 'Login', 'woocommerce' ); ?></a>
-			<a href="<?php echo esc_url( wc_get_account_endpoint_url( 'register' ) ); ?>" class="woocommerce-register-link"><?php esc_html_e( 'Register', 'woocommerce' ); ?></a>
-		</div>
 	</div>
 </header>
