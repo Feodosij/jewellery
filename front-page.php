@@ -97,97 +97,16 @@ get_header();
         </div>          
         <div class="featured_product_wrapper">
             <div class="product_ads">
-                <?php
-                    $args = array(
-                        'post_type' => 'product',
-                        'posts_per_page' => 2,
-                        'product_cat' => 'ads',
-                        'orderby' => 'date',
-                        'order' => 'DESC',
-                    );
-                    $ads = new WP_Query( $args );
-
-                    if ($ads->have_posts()) {
-                    ?>
-                    <div class="product_ads-container">
-                        <?php while ($ads->have_posts()) {
-                             $ads->the_post(); ?>
-                            <div class="product_ads-item">
-                                <a href="<?php the_permalink(); ?>">
-                                    <?php the_post_thumbnail(); ?>
-                                </a>
-                                <div class="product_ads-item-content">
-                                    <div class="title"><?php the_title(); ?></div>
-                                    <div class="description">
-                                        Started now shortly had for assured hearing expense led juvenile.
-                                    </div>
-                                    <span>shop now</span>
-                                </div>
-                            </div>
-                        <?php } ?>
-                    </div>
-                    <?php } ?>
-                <?php wp_reset_postdata();  ?>
+                <?php wc_get_template_part('woocommerce/ads-products'); ?>
             </div>
 
             <div class="carousel_wrapper">
                 <div class="carousel">
-                    <?php
-                    $args = array(
-                        'post_type' => 'product',
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'product_visibility',
-                                'field'    => 'name',
-                                'terms'    => 'featured',
-                            ),
-                        ),
-                    );
-                    $featured = new WP_Query( $args );
-
-                    if ($featured->have_posts()) {
-                    ?>
-                    <div class="carousel-container">
-                        <?php while ($featured->have_posts()) { 
-                            $featured->the_post(); ?>
-                        <div class="carousel-item">
-                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-                            <div class="title"><?php the_title(); ?></div>
-                            <div class="description">Jewelry</div>
-                            <span><?php echo '$' . $product->get_price(); ?></span>
-                        </div>
-                        <?php } ?>
-                    </div>
-                    <?php } ?>
-                    <?php wp_reset_postdata();  ?>
+                    <?php wc_get_template_part('woocommerce/featured-products'); ?>
                 </div>
 
                 <div class="carousel">
-                    <?php
-                    $args = array(
-                        'post_type' => 'product',
-                        'posts_per_page' => -1,
-                        'product_cat' => 'new',
-                        'orderby' => 'date',
-                        'order' => 'DESC',
-                        
-                    );
-                    $new_product = new WP_Query( $args );
-
-                    if ($new_product->have_posts()) {
-                    ?>
-                    <div class="carousel-container">
-                        <?php while ($new_product->have_posts()) { 
-                            $new_product->the_post(); ?>
-                        <div class="carousel-item">
-                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>                            <div class="title"><?php the_title(); ?></div>
-                            <div class="description">Jewelry</div>
-                            <span><?php echo '$' . $product->get_price(); ?></span>
-                        </div>
-                        <?php } ?>
-                    </div>
-                    <?php } ?>
-                    <?php wp_reset_postdata();  ?>
+                    <?php wc_get_template_part('woocommerce/new-products'); ?>
                 </div>
             </div>
         </div>

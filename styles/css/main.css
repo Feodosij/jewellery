@@ -37,6 +37,7 @@ a {
 body {
   margin: 0;
   padding: 0;
+  background-color: #F4F4F4;
 }
 
 .container {
@@ -138,6 +139,11 @@ body {
   display: flex;
   max-width: 1170px;
   margin: 0 auto;
+  justify-content: space-between;
+}
+.main_header .header_wrapper .custom-logo-link {
+  display: flex;
+  align-items: center;
 }
 .main_header .header_wrapper .menu-header-menu-container {
   max-width: 760px;
@@ -168,9 +174,35 @@ body {
   font-family: "FontAwesome";
   color: #FFF;
   margin-left: 5px;
+  font-size: 10px;
 }
 .main_header .header_wrapper .menu-header-menu-container .menu_list:last-child::after {
   display: none;
+}
+.main_header .header_wrapper .top-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: "Marcellus-Regular", sans-serif;
+}
+.main_header .header_wrapper .top-cart .cart-contents {
+  text-decoration: none;
+  color: #fff;
+}
+.main_header .header_wrapper .top-cart .cart-contents i {
+  margin-right: 5px;
+  color: #fff;
+}
+.main_header .header_wrapper .top-cart .cart-contents .cart-count {
+  font-family: "Lora-Regular", sans-serif;
+  background-color: #C3935B;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 4px;
+  position: absolute;
+  font-size: 10px;
+  top: 16px;
+  left: 10px;
 }
 
 .main_banner {

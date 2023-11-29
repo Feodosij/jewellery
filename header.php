@@ -45,5 +45,17 @@
 				)
 			);
 		?>
+
+		<div id="top-cart" class="top-cart">
+			<a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>">
+				<i class="fas fa-shopping-cart"><span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span> </i>
+				
+				<?php
+					$total_price = WC()->cart->get_cart_total(); ?>
+					<span><?php echo $total_price; ?></span>
+						
+			</a>
+		</div>
+
 	</div>
 </header>
